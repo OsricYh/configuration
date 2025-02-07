@@ -1,0 +1,14 @@
+#~/.ssh/config
+Host *
+    ForwardAgent yes
+    AddKeysToAgent yes
+    TCPKeepAlive yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h:%p
+    ControlPersist 4h
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_id_rsa   
